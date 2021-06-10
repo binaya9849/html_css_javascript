@@ -1,0 +1,28 @@
+*
+{
+	padding:0;
+	margin:0;
+}
+body
+{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+.gallery
+{
+	width:100%;
+	height:auto;
+	margin:auto;
+}
+.gallery img
+{
+	width:480px;
+	height:auto;
+	transition:0.5s;
+}
+.gallery img:hover
+{
+	filter:grayscale(80%);
+	transform: scale(0.9);
+}

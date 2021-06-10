@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  align-items: center;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+#photo{
+  animation: blur 5s infinite alternate;
+  height: 90vw;
+  max-height: 640px;
+  max-width: 640px;
+  position: relative;
+  width: 90vw;
+}
+
+#photo div{
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#normal{
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/lee-morgan.jpg);
+  background-size: cover;
+}
+
+#invert{
+  animation: mask 5s steps(69) infinite alternate;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/lee-morgan.jpg);
+  background-size: cover;
+  filter: invert(1.0) grayscale(1.0);
+  -webkit-mask: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/sheet.png');
+  -webkit-mask-size: 7000% 100%;
+  mask: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/141041/sheet.png');
+  mask-size: : 7000% 100%;
+}
+
+@keyframes blur{
+  from{
+    filter: blur(3px);
+    opacity: 0;
+  }
+  to{
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes mask{
+  from{
+	  -webkit-mask-position: 0% 0;
+	  mask-position: 0% 0;
+  }
+  to{
+	  -webkit-mask-position: 100% 0;
+	  mask-position: 100% 0;
+  }
+}
+
+a{
+  color: white;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  top: 2em;
+}
+    </style>
+</head>
+<body>
+    <div id="photo">
+        <div id="normal"></div>
+        <div id="invert"></div>  
+      </div>
+      
+      <a href="https://medium.com/@leemartin/recreating-the-red-dead-redemption-2-tintype-loading-screen-effect-in-css-10ca87d5b9de" target="_blank">Read Tutorial on Medium</a>
+      
+</body>
+</html>

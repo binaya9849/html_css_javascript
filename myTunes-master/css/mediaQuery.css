@@ -1,0 +1,40 @@
+@media (max-width: 580px) {
+    .hide-on-small {
+        display: none;
+    }
+
+    #showcase {
+        height: 50vh;
+    }
+
+    #showcase .container {
+        margin-top: 5vh;
+        width: 70%;
+    }
+
+    #showcase h1 {
+        margin: 0;
+        font-size: 3rem;
+    }
+
+    #showcase h2 {
+        font-size: 1.5rem;
+        /* line-height: 1.2; */
+    }
+}
+
+@media (max-width: 780px) {
+    .gift-cards {
+        grid-template-columns: 1fr;
+    }
+
+    footer .footer-cols {
+        display: none;
+    }
+}
+
+@media (max-height: 580px) {
+    #showcase p.lead {
+        display: none;
+    }
+}

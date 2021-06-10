@@ -1,0 +1,212 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .main-nav {
+            width: 100%;
+            height: 10rem;
+            padding: 0 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            ;
+        }
+        
+        .hamburger-menu {
+            height: 5rem;
+            border-radius: .4rem;
+            box-shadow: .5rem .5rem 1rem #cacaca, -.5rem -.5rem 1rem #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5rem;
+        }
+        
+        .hamburger-menu:hover {
+            box-shadow: inset .5rem .5rem 1rem #cacaca, inset -.5rem -.5rem 1rem #fff;
+        }
+        
+        .bar {
+            width: 3rem;
+            height: 2px;
+            background: #333;
+            display: inline-block;
+            position: relative;
+            transition: background-color .8s;
+        }
+        
+        .bar::before,
+        .bar::after {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background: #333;
+            transition: all .8s;
+        }
+        
+        .bar::before {
+            top: -.8rem;
+        }
+        
+        .bar::after {
+            top: .8rem;
+        }
+        
+        .open .bar {
+            background-color: transparent;
+        }
+        
+        .open .bar::before {
+            top: 0;
+            transform: rotate(135deg);
+        }
+        
+        .open .bar::after {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+        
+        .nav-list {
+            width: 50rem;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #eee;
+            display: flex;
+            transform: translateX(55rem);
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: -.5rem 0 1rem rgba(0, 0, 0, .2);
+            z-index: 1500;
+            transition: transform ease-in-out 1s;
+        }
+        
+        .open .nav-list {
+            transform: translateX(0);
+        }
+        
+        .nav-item {
+            list-style: none;
+            border-bottom: 2px solid crimson;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            display: block;
+            color: #333;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            padding: .5rem;
+            font-weight: 700;
+            transition: color .8s;
+        }
+        
+        .nav-link:hover {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="hamburger-menu">
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Tours</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.0/gsap.min.js">
+    </script>
+    <script>
+        const mainNav = document.querySelector('.main-nav');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+        hamburgerMenu.addEventListener('click', function() {
+            mainNav.classList.toggle('open');
+        });
+
+
+        gsap.fromTo('.hero-clipped', {
+            scaleX: 0
+        }, {
+            duration: 1,
+            scaleX: 1
+        });
+
+        gsap.fromTo('.logo', {
+            x: -200,
+            opacity: 0
+        }, {
+            duration: 1,
+            delay: .5,
+            x: 0,
+            opacity: 1
+        });
+
+        gsap.fromTo('.hamburger-menu', {
+            x: 200,
+            opacity: 0
+        }, {
+            duration: 1,
+            delay: 1,
+            x: 0,
+            opacity: 1
+        });
+
+        gsap.fromTo('.hero-textbox', {
+            yPercent: 40,
+            opacity: 0
+        }, {
+            duration: 2,
+            delay: 1.3,
+            yPercent: -50,
+            opacity: 1
+        });
+    </script>
+
+</body>
+
+</html>

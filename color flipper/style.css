@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-style: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Indie Flower', cursive; */
+  font-family: 'Mate SC', serif;
+  font-size: 1.6rem;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(238, 238, 238);
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+
+.nav {
+  background-color: #fff;
+  box-shadow: 0 4px 1rem rgb(230, 230, 230);
+}
+
+.nav .nav__center {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nav .logo {
+  color: blue;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.nav .nav__items {
+  display: flex;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.nav .nav__item {
+  margin-right: 2rem;
+}
+
+.nav .nav__link:link,
+.nav .nav__link:visited {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav .nav__link:hover,
+.nav .nav__link:active {
+  border-bottom: 1px solid #000;
+}
+
+.nav .nav__link.active {
+  border-bottom: 1px solid #000;
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.heading .color {
+  color: blueviolet;
+}
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.4 ease;
+
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+button:hover {
+  color: #fff;
+  background-color: #000;
+}
